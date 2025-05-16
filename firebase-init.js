@@ -1,9 +1,9 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyCBSl2BdAd_DghcW5a5-qp8gFcK0nfuGCY",
-    authDomain: "controle-de-gastos-3e7f9.firebaseapp.com",
-    projectId: "controle-de-gastos-3e7f9",
-    storageBucket: "controle-de-gastos-3e7f9.appspot.com",
-    messagingSenderId: "1018055774945",
-    appId: "1:1018055774945:web:bb0b24d7c0a4992e16dda0"
-};
+    apiKey: "AIzaSyBiecqzdioIxcUIXkLJqmwKj7n8julC0No",
+    authDomain: "cadastro-864e9.firebaseapp.com",
+    projectId: "cadastro-864e9",
+    storageBucket: "cadastro-864e9.firebasestorage.app",
+    messagingSenderId: "860248570217",
+    appId: "1:860248570217:web:363517bcae53fd7bf4a5f8"
+  };
 firebase.initializeApp(firebaseConfig);

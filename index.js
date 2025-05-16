@@ -30,7 +30,20 @@ function login() {
 }
 
 function register() {
-    window.location.href = "pages/register/register.html";
+    firebase.auth().signInWithEmailAndPassword(
+        form.email().value, form.password().value
+    ).then(response => {
+        window.location.href = "pages/register/register.html";
+    }).catch(erro => {
+        alert(getErrorMessage(error));
+    });
+}
+
+function getErrorMessage(error) {
+    if (error.code == "auth/user-not-found") {
+        return "Usuário não encontrado";
+    }
+    return error.message;
 }
 
 function recoverPassword() {
