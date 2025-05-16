@@ -1,3 +1,13 @@
+const form = {
+    email: () => document.getElementById("email"),
+    emailInvalidError: () => document.getElementById("email-invalid-error"),
+    emailRequiredError: () => document.getElementById("email-required-error"),
+    loginButton: () => document.getElementById("login-button"),
+    password: () => document.getElementById("password"),
+    passwordRequiredError: () => document.getElementById("password-required-error"),
+    recoverPasswordButton: () => document.getElementById("recover-password-button"),
+}
+
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         window.location.href = "pages/home/home.html";
@@ -18,8 +28,7 @@ function onChangePassword() {
 
 function login() {
     showLoading();
-    firebase.auth().signInWithEmailAndPassword(
-        form.email().value, form.password().value
+    firebase.auth().signInWithEmailAndPassword(form.email().value, form.password().value
     ).then(() => {
         hideLoading();
         window.location.href = "pages/home/home.html";
@@ -87,13 +96,3 @@ function isEmailValid() {
 function isPasswordValid() {
     return form.password().value ? true : false;
 }
-
-const form = {
-    email: () => document.getElementById("email"),
-    emailInvalidError: () => document.getElementById("email-invalid-error"),
-    emailRequiredError: () => document.getElementById("email-required-error"),
-    loginButton: () => document.getElementById("login-button"),
-    password: () => document.getElementById("password"),
-    passwordRequiredError: () => document.getElementById("password-required-error"),
-    recoverPasswordButton: () => document.getElementById("recover-password-button"),
-} 

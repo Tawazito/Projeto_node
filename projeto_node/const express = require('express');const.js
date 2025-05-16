@@ -1,0 +1,1 @@
+const express = require('express');const nodemailer = require('nodemailer');const cors = require('cors');require('dotenv').config();const app = express();const PORT = 3000;app.use(cors()); // Permite qualquer origemapp.use(express.json());app.listen(PORT, () => {  console.log(`Servidor rodando na porta ${PORT}`);});

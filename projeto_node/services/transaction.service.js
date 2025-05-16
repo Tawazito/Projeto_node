@@ -43,7 +43,12 @@ function callApi({method, url, params}) {
 
         xhr.onreadystatechange = function() {
             if (this.readyState == 4) {
-                const json = JSON.parse(this.responseText);
+                let json = null;
+                try {
+                    json = this.responseText ? JSON.parse(this.responseText) : null;
+                } catch (e) {
+                    json = null;
+                }
                 if (this.status != 200) {
                     reject(json);
                 } else {
